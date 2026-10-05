@@ -31,7 +31,6 @@ A friend and I built **[Plan&Ride](https://par.karafa.net)** because checking a 
 | Security | OPNsense, firewalls, WireGuard, IPsec |
 | Systems | Debian, Ubuntu, Proxmox VE, Docker, Windows |
 | Observability | Zabbix, Grafana, NetBox, Uptime Kuma |
-| Code | Python, SQL, HTML, CSS, JavaScript |
 
 ### Get in touch
 
