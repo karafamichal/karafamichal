@@ -56,7 +56,9 @@
 @keyframes go{from{offset-distance:0%}to{offset-distance:100%}}
 .led{animation:blink 2.4s steps(1) infinite}
 @keyframes blink{50%{opacity:.25}}
-@media (prefers-reduced-motion:reduce){.pkt,.led{animation:none}.pkt{offset-distance:50%}}
+.hop{animation:hop .35s ease-out both}
+@keyframes hop{from{opacity:0;transform:translateX(-10px)}}
+@media (prefers-reduced-motion:reduce){.pkt,.led,.hop{animation:none}.pkt{offset-distance:50%}}
 </style>
 <rect width="1280" height="348" rx="18" fill="#182231"/>
 <defs><filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect x="40" y="40" width="1200" height="268" rx="10" fill="#0D131D" stroke="#24324A" stroke-width="2"/><text class="x" x="80" y="112" font-size="58" fill="#F5B941" filter="url(#glow)">Plan&amp;Ride</text><text class="m" x="1200" y="104" font-size="20" fill="#5AA1F7" text-anchor="end">par.karafa.net</text><line x1="80" y1="138" x2="1200" y2="138" stroke="#24324A" stroke-width="2"/><text class="x" x="80" y="186" font-size="34" fill="#F5B941" filter="url(#glow)">Live departures</text><text class="x" x="620" y="186" font-size="34" fill="#F5B941" filter="url(#glow)" opacity=".55">every stop</text><text class="x led" x="1200" y="186" font-size="34" fill="#F5B941" filter="url(#glow)" text-anchor="end" style="animation-delay:-0.0s">now</text><text class="x" x="80" y="232" font-size="34" fill="#F5B941" filter="url(#glow)">Connection planner</text><text class="x" x="620" y="232" font-size="34" fill="#F5B941" filter="url(#glow)" opacity=".55">door to door</text><text class="x led" x="1200" y="232" font-size="34" fill="#F5B941" filter="url(#glow)" text-anchor="end" style="animation-delay:-0.8s">now</text><text class="x" x="80" y="278" font-size="34" fill="#F5B941" filter="url(#glow)">Bus tracking</text><text class="x" x="620" y="278" font-size="34" fill="#F5B941" filter="url(#glow)" opacity=".55">on the map</text><text class="x led" x="1200" y="278" font-size="34" fill="#F5B941" filter="url(#glow)" text-anchor="end" style="animation-delay:-1.6s">now</text>

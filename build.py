@@ -40,7 +40,9 @@ def svg(w, h, body, title):
 @keyframes go{{from{{offset-distance:0%}}to{{offset-distance:100%}}}}
 .led{{animation:blink 2.4s steps(1) infinite}}
 @keyframes blink{{50%{{opacity:.25}}}}
-@media (prefers-reduced-motion:reduce){{.pkt,.led{{animation:none}}.pkt{{offset-distance:50%}}}}
+.hop{{animation:hop .35s ease-out both}}
+@keyframes hop{{from{{opacity:0;transform:translateX(-10px)}}}}
+@media (prefers-reduced-motion:reduce){{.pkt,.led,.hop{{animation:none}}.pkt{{offset-distance:50%}}}}
 </style>
 <rect width="{w}" height="{h}" rx="18" fill="{NAVY}"/>
 {body}
@@ -106,17 +108,19 @@ def path_svg():
             f'<text class="m" x="56" y="100" font-size="18" fill="{FOG}" opacity=".7">traceroute to karafamichal, {len(HOPS) + 1} hops max, sorted by date</text>')
     for i, (when, where, what) in enumerate(HOPS):
         y = top + i * row + 34
-        body += (f'<line x1="56" y1="{y - 34}" x2="{W - 56}" y2="{y - 34}" stroke="{LINE}"/>'
+        body += (f'<g class="hop" style="animation-delay:{0.6 + i * 0.32:.2f}s">'
+                 f'<line x1="56" y1="{y - 34}" x2="{W - 56}" y2="{y - 34}" stroke="{LINE}"/>'
                  f'<text class="m" x="56" y="{y}" font-size="20" fill="{AMBER}">{i + 1:>2}</text>'
                  f'<text class="s" x="110" y="{y}" font-size="23" fill="{WHITE}">{esc(where)}</text>'
                  f'<text class="b" x="470" y="{y}" font-size="20" fill="{FOG}">{esc(what)}</text>'
-                 f'<text class="m" x="{W - 56}" y="{y}" font-size="18" fill="{BLUE}" text-anchor="end">{when}</text>')
+                 f'<text class="m" x="{W - 56}" y="{y}" font-size="18" fill="{BLUE}" text-anchor="end">{when}</text></g>')
     y = top + len(HOPS) * row + 34
-    body += (f'<line x1="56" y1="{y - 34}" x2="{W - 56}" y2="{y - 34}" stroke="{LINE}"/>'
+    body += (f'<g class="hop" style="animation-delay:{0.6 + len(HOPS) * 0.32:.2f}s">'
+             f'<line x1="56" y1="{y - 34}" x2="{W - 56}" y2="{y - 34}" stroke="{LINE}"/>'
              f'<text class="m" x="56" y="{y}" font-size="20" fill="{AMBER}">11</text>'
              f'<text class="m" x="110" y="{y}" font-size="20" fill="{AMBER}"><tspan class="led">*  *  *</tspan></text>'
              f'<text class="b" x="470" y="{y}" font-size="20" fill="{FOG}">MikroTik MTCNA, planned by the end of 2026</text>'
-             f'<text class="m" x="{W - 56}" y="{y}" font-size="18" fill="{BLUE}" text-anchor="end">next</text>')
+             f'<text class="m" x="{W - 56}" y="{y}" font-size="18" fill="{BLUE}" text-anchor="end">next</text></g>')
     alt = "My path so far: " + "; ".join(f"{w}: {a}, {b}" for w, a, b in HOPS) + "; next: MikroTik MTCNA."
     return svg(W, H, body, alt)
 
