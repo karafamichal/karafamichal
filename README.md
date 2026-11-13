@@ -6,7 +6,7 @@ I'm a fourth-year computer network technician student at SOŠ IT in Banská Byst
 
 <a href="https://par.karafa.net"><img src="assets/planride.svg" width="100%" alt="Plan&Ride, a free open-source app for Slovak buses: live departures, connection planner and bus tracking."></a>
 
-A friend and I built **[Plan&Ride](https://par.karafa.net)** because checking a Slovak bus shouldn't take three websites. It shows live departures from any stop, plans connections and tracks where your bus is right now. It's free and open source.
+A friend and I built **[Plan&Ride](https://par.karafa.net)** because checking a Slovak bus shouldn't take three websites. It shows live departures from any stop, plans connections and tracks where your bus is right now. It's free and [open source](https://github.com/Plan-Ride).
 
 <img src="assets/path.svg" width="100%" alt="My path so far, written as a traceroute: SOŠ IT Banská Bystrica 2023, THR Systems internships 2024 and 2025, Cisco CCNA 1 to 3 2024 to 2026, CanSat 2nd place nationally 2026, SWAN a.s. internship 2026, Erasmus+ Erfurt 2026, now lead network engineer at Grandify. Next: MikroTik MTCNA.">
 
